@@ -14,18 +14,19 @@ The marketing site is built on Astro and Tailwind CSS, adapted from the open-sou
 
 ## Local development
 
-Requires a supported Node.js LTS version.
+Requires a supported Node.js LTS version and pnpm.
 
 ```bash
-npm install
-npm run dev
+pnpm install
+pnpm dev
 ```
 
 ## Build and validate
 
 ```bash
-npm run check
-npm run build
+pnpm check
+pnpm build
+pnpm preview
 ```
 
 ## Current implementation notes
