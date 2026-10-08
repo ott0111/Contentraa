@@ -1,100 +1,23 @@
 ---
-import PageHeader from "@/components/PageHeader.astro";
-import config from "@/config/config.json";
 import Base from "@/layouts/Base.astro";
-import { Image } from "astro:assets";
-import type { CollectionEntry } from "astro:content";
-import { getEntry } from "astro:content";
+import config from "@/config/config.json";
 
-const entry = (await getEntry(
-  "contact",
-  "-index"
-)) as CollectionEntry<"contact">;
-const { contact_form_action } = config.params;
-const contact = entry.data;
-const page_data = {
-  ...contact,
-  content: entry.body,
-};
+const email = config.params.email;
 ---
 
 <Base
-  title={contact.title}
-  meta_title={contact.meta_title}
-  description={contact.description}
-  image={contact.image}
+  title="Contact Contentra"
+  meta_title="Contact Contentra"
+  description="Get in touch with the Contentra team about the product, feedback, or partnerships."
 >
-  <section class="page-hero pb-6 pt-16">
+  <section class="page-hero pb-14 pt-16">
     <div class="container">
-      <PageHeader page_data={page_data} />
-    </div>
-  </section>
-
-  <section class="section pt-0">
-    <div class="container">
-      <div class="row">
-        <div class="mb-10 text-center md:col-6 md:order-2 md:mb-0 md:pt-9">
-          <div class="contact-img relative inline-flex pb-5 pl-5">
-            <Image
-              src="/images/contact-img.png"
-              height={544}
-              width={500}
-              alt=""
-            />
-            <Image
-              class="absolute bottom-0 left-0 -z-[1] h-14 w-14"
-              src="/images/shape-2.png"
-              alt=""
-              height={56}
-              width={56}
-            />
-          </div>
-        </div>
-        <div class="md:col-6 md:order-1">
-          <form
-            class="lg:max-w-[484px]"
-            action={contact_form_action}
-            method="POST"
-          >
-            <div class="form-group mb-5">
-              <label class="form-label" for="name">Full Name</label>
-              <input
-                class="form-control"
-                type="text"
-                id="name"
-                placeholder="Your Full Name"
-              />
-            </div>
-            <div class="form-group mb-5">
-              <label class="form-label" for="eamil">Email Adrdess</label>
-              <input
-                class="form-control"
-                type="text"
-                id="email"
-                placeholder="Your  Email Address"
-              />
-            </div>
-            <div class="form-group mb-5">
-              <label class="form-label" for="reason">Reason/Purpose</label>
-              <select name="reason" id="reason" class="form-select" required>
-                <option value="">Select reason/purpose</option>
-                <option value="investment plane">Investment Plan</option>
-                <option value="investment plane-2">Investment Plan 2</option>
-                <option value="investment plane-3">Investment Plan 3</option>
-              </select>
-            </div>
-            <div class="form-group mb-5">
-              <label class="form-label" for="message">Message Here</label>
-              <textarea class="form-control" id="message" cols="30" rows="6"
-              ></textarea>
-            </div>
-            <input
-              class="btn btn-primary block w-full"
-              type="submit"
-              value="Send Message"
-            />
-          </form>
-        </div>
+      <div class="mx-auto max-w-[760px] text-center">
+        <p class="mb-4 text-sm font-semibold uppercase tracking-[0.16em] text-primary">Contact</p>
+        <h1 class="mb-6">Let’s talk about Contentra.</h1>
+        <p class="text-lg">Questions, feedback, or interested in following the product as it develops? Send us an email and we’ll take it from there.</p>
+        <a class="btn btn-primary mt-8" href={`mailto:${email}?subject=Hello%20Contentra`}>Email Contentra</a>
+        <p class="mt-4 text-sm text-text-light">{email}</p>
       </div>
     </div>
   </section>
