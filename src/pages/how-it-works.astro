@@ -1,105 +1,20 @@
 ---
-import PageHeader from "@/components/PageHeader.astro";
-import Shape from "@/components/Shape.astro";
 import Base from "@/layouts/Base.astro";
-import Cta from "@/layouts/partials/Cta.astro";
-import { markdownify } from "@/lib/utils/textConverter";
-import { Image } from "astro:assets";
-import type { CollectionEntry } from "astro:content";
-import { getEntry } from "astro:content";
-import { AiFillCheckCircle } from "react-icons/ai";
-
-const how_it_works = (await getEntry(
-  "how-it-works",
-  "-index"
-)) as CollectionEntry<"how-it-works">;
-const { performance, our_works } = how_it_works.data;
-const page_data = {
-  ...how_it_works.data,
-  content: how_it_works.body,
-};
+const steps = [
+  { n: "01", title: "Understand your brand", desc: "Set up Brand Brain with your niche, audience, positioning, voice, and goals. Review and approve the context Contentra should use." },
+  { n: "02", title: "Find an opportunity", desc: "Explore relevant topics, audience questions, and available trend signals. See why an idea may fit your goals before you commit to it." },
+  { n: "03", title: "Create something original", desc: "Turn an opportunity into a script, post, caption, or creative brief. Refine the draft with your voice and keep control of the final output." },
+  { n: "04", title: "Organize the work", desc: "Save content to your library, group related work, and plan upcoming posts. Keep drafts and next steps easy to find." },
+  { n: "05", title: "Learn and improve", desc: "Use available performance data to understand patterns, then turn those lessons into your next experiment or recommendation." },
+];
 ---
-
-<Base
-  title={how_it_works.data.title}
-  meta_title={how_it_works.data.meta_title}
-  description={how_it_works.data.description}
-  image={how_it_works.data.image}
->
-  <Shape />
-  <section class="page-hero pb-14 pt-16">
-    <div class="container">
-      <div class="page-hero-content mx-auto max-w-[883px] text-center">
-        <PageHeader page_data={page_data} />
-      </div>
-
-      <div class="row mt-14">
-        {
-          performance.map((item, i) => (
-            <div class="mt-10 text-center sm:col-6 md:col-4 md:mb-0">
-              <div
-                class={`relative mx-auto mb-8 flex h-[184px] w-[184px] items-center justify-center rounded-xl bg-white p-4 shadow-lg ${
-                  performance.length - 1 !== i
-                    ? "after:absolute after:-right-4 after:-z-[1] after:hidden after:w-full after:translate-x-full after:border-b-2 after:border-dashed after:border-primary/50 after:content-[''] md:after:block"
-                    : undefined
-                }`}
-              >
-                <Image height={122} width={144} src={item.image} alt="" />
-              </div>
-              <h2 class="h5" set:html={markdownify(item.title)} />
-              <p class="mt-4" set:html={markdownify(item.description)} />
-            </div>
-          ))
-        }
-      </div>
-    </div>
-  </section>
-
-  <section>
-    <div class="container">
-      {
-        our_works.map((item, index) => (
-          <div class="gx-5 row mt-16 items-center first:mt-12">
-            <div
-              class={`lg:col-7 ${
-                index % 2 === 0 ? "lg:order-1" : "lg:order-0"
-              }`}
-            >
-              <div class="relative">
-                <Image
-                  class="w-full object-contain"
-                  alt="service"
-                  width={473}
-                  height={286}
-                  src={item.image}
-                />
-              </div>
-            </div>
-            <div
-              class={`mt-6 lg:col-5 lg:mt-0 ${
-                index % 2 === 0 ? "lg:order-0" : "lg:order-1"
-              }`}
-            >
-              <div class="text-container">
-                <h2 class="lg:text-4xl" set:html={markdownify(item.title)} />
-
-                {item.list && (
-                  <ul class="mt-6 text-text-dark lg:-ml-4">
-                    {item.list.map((list) => (
-                      <li class="mb-2 flex items-center rounded px-4">
-                        <AiFillCheckCircle className="mr-3 fill-(--color-primary) text-white" />
-                        {list}
-                      </li>
-                    ))}
-                  </ul>
-                )}
-              </div>
-            </div>
-          </div>
-        ))
-      }
-    </div>
-  </section>
-
-  <Cta />
+<Base title="How Contentra Works" meta_title="How Contentra Works — From Insight to Action" description="See how Contentra connects brand intelligence, content discovery, creation, planning, and performance into one workflow.">
+  <main class="chw-page">
+    <section class="chw-hero"><span>FROM IDEA TO IMPROVEMENT</span><h1>A connected workflow<br/>for <em>consistent growth.</em></h1><p>Contentra brings the work behind your content into one place, so you can move from a useful insight to an action without losing the context.</p><a href="/signup" class="chw-button">Build your workflow <span>↗</span></a></section>
+    <section class="chw-steps"><div class="chw-rail"></div>{steps.map((step, i) => <article class:list={["chw-step", { "chw-step-reverse": i % 2 === 1 }]}><div class="chw-step-visual"><span>{step.n}</span><div class="chw-step-card"><small>CONTENTRA WORKFLOW</small><b>{step.title}</b><div class="chw-skeleton"></div><div class="chw-skeleton chw-skeleton-short"></div><div class="chw-step-chip"><i></i> Context stays connected</div></div></div><div class="chw-step-copy"><span>{step.n} / STEP {i + 1}</span><h2>{step.title}</h2><p>{step.desc}</p></div></article>)}</section>
+    <section class="chw-outro"><h2>Every step should make the next one easier.</h2><p>That is the idea behind Contentra: one workspace that connects what you know, what you create, and what you learn.</p><a href="/#features" class="chw-button">Explore the platform <span>→</span></a></section>
+  </main>
+  <style>
+    .chw-page{color:#18181b;--orange:#f47b20}.chw-hero{text-align:center;padding:90px 20px 75px;background:radial-gradient(ellipse at 50% 0,rgba(244,123,32,.1),transparent 58%),#fff}.chw-hero>span{font-size:10px;font-weight:800;letter-spacing:.14em;color:#b75a13}.chw-hero h1{font-size:clamp(40px,5vw,62px);font-weight:800;line-height:1.07;letter-spacing:-.055em;margin:20px 0}.chw-hero h1 em{font-style:normal;color:var(--orange)}.chw-hero p,.chw-outro p{max-width:610px;margin:0 auto;color:#73737b;font-size:14px;line-height:1.85}.chw-button{display:inline-flex;align-items:center;gap:14px;margin-top:25px;padding:14px 18px;border-radius:9px;background:var(--orange);color:#fff;text-decoration:none;font-size:12px;font-weight:750}.chw-button:hover{background:#df6814;color:#fff}.chw-steps{width:min(1000px,calc(100% - 48px));margin:auto;position:relative}.chw-rail{position:absolute;top:120px;bottom:120px;left:50%;width:1px;background:#f0ded0}.chw-step{position:relative;display:grid;grid-template-columns:1fr 1fr;gap:90px;align-items:center;padding:55px 0}.chw-step-reverse .chw-step-visual{order:2}.chw-step-reverse .chw-step-copy{order:1}.chw-step-visual{height:250px;background:#faf6f1;border:1px solid #f1e7df;border-radius:14px;display:grid;place-items:center;position:relative;overflow:hidden}.chw-step-visual>span{position:absolute;top:17px;left:18px;font-size:10px;color:#b4a69c;font-weight:800}.chw-step-card{width:min(300px,80%);background:#fff;border:1px solid #eee7e1;border-radius:11px;padding:22px;box-shadow:0 18px 40px #3c2c1f0b;position:relative}.chw-step-card small{font-size:8px;letter-spacing:.12em;color:#b96a2b;font-weight:800;display:block}.chw-step-card>b{font-size:17px;display:block;margin:11px 0 15px;letter-spacing:-.03em}.chw-skeleton{height:7px;background:#f0eeec;border-radius:6px;margin-top:8px}.chw-skeleton-short{width:62%}.chw-step-chip{display:flex;align-items:center;gap:7px;background:#fff0e5;color:#9e510f;border-radius:6px;padding:9px;margin-top:17px;font-size:9px;font-weight:700}.chw-step-chip i{width:6px;height:6px;background:#f47b20;border-radius:50%}.chw-step-copy>span{font-size:9px;letter-spacing:.1em;font-weight:800;color:#bd651e}.chw-step-copy h2{font-size:clamp(28px,3vw,38px);line-height:1.15;letter-spacing:-.05em;margin:15px 0}.chw-step-copy p{font-size:13px;line-height:1.85;color:#73737b}.chw-outro{text-align:center;background:#faf9f7;padding:76px 20px 90px}.chw-outro h2{font-size:clamp(30px,4vw,44px);letter-spacing:-.05em;margin:0 0 16px}.chw-outro .chw-button{margin-top:24px}@media(max-width:760px){.chw-hero{padding:60px 18px}.chw-steps{width:calc(100% - 32px)}.chw-rail{display:none}.chw-step{grid-template-columns:1fr;gap:24px;padding:35px 0}.chw-step-reverse .chw-step-visual,.chw-step-reverse .chw-step-copy{order:initial}.chw-step-visual{height:225px}.chw-step-copy h2{font-size:31px}.chw-outro{padding:60px 18px}}
+  </style>
 </Base>
