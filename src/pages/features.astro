@@ -1,26 +1,21 @@
 ---
-import FeatureBanner from "@/components/features/FeatureBanner.astro";
-import ProjectManagement from "@/components/features/ProjectManagement.astro";
-import Shape from "@/components/Shape.astro";
 import Base from "@/layouts/Base.astro";
-import Cta from "@/layouts/partials/Cta.astro";
-import type { CollectionEntry } from "astro:content";
-import { getEntry } from "astro:content";
-
-const features = (await getEntry(
-  "features",
-  "-index"
-)) as CollectionEntry<"features">;
+const features = [
+  { n: "01", group: "INTELLIGENCE", title: "Brand Brain", desc: "Give Contentra a reusable understanding of your positioning, audience, voice, offers, and goals. Keep it editable and consistent across your workflow.", items: ["Website and brand profile setup", "Audience, voice, and goal context", "Reusable approved brand knowledge"] },
+  { n: "02", group: "DISCOVERY", title: "Discover & Creatos", desc: "Explore relevant topics, formats, audience questions, and content opportunities. Save an idea or send it into an original creation workflow.", items: ["Niche and topic exploration", "Keep, dismiss, and remix workflows", "Transparent source and freshness context"] },
+  { n: "03", group: "PRODUCTION", title: "Create", desc: "Turn a prompt, asset, or saved opportunity into editable scripts, captions, posts, briefs, and creative variations.", items: ["Short-form scripts and social posts", "Repurposing and creative briefs", "Editable drafts and reusable content"] },
+  { n: "04", group: "ORGANIZATION", title: "My Content & Planner", desc: "Keep ideas, drafts, assets, campaigns, and scheduled work organized instead of losing them across separate tools.", items: ["Searchable content library", "Planning and publishing calendar", "Clear draft and review states"] },
+  { n: "05", group: "PERFORMANCE", title: "Analytics & Next Best Action", desc: "Use the data actually available to understand performance patterns and choose a useful next step.", items: ["Metrics with clear source and time range", "Evidence-based growth recommendations", "Actions connected to Create and Planner"] },
+  { n: "06", group: "WORKSPACE", title: "Teams & client workflows", desc: "Give businesses and agencies a clearer way to organize work, with separate client context and collaboration controls as those capabilities are enabled.", items: ["Workspace-specific brand context", "Campaign and review workflows", "Multi-client operations on eligible plans"] },
+];
 ---
-
-<Base
-  title={features.data.title}
-  meta_title={features.data.meta_title}
-  description={features.data.description}
-  image={features.data.image}
->
-  <Shape />
-  <FeatureBanner features={features.data} />
-  <ProjectManagement features={features.data} />
-  <Cta />
+<Base title="Contentra Features" meta_title="Contentra Features — One Connected Growth Workspace" description="Explore the Contentra creator growth platform: Brand Brain, Discover, Create, Planner, Analytics, and actionable recommendations.">
+  <main class="cf-page">
+    <section class="cf-hero"><span class="cf-eyebrow">THE CONTENTRA PLATFORM</span><h1>Not another AI writer.<br/><em>Your growth, connected.</em></h1><p>Every part of your content workflow should work together: from understanding your brand to choosing the next action based on what you learn.</p><div class="cf-actions"><a href="/signup" class="cf-button cf-primary">Get started <span>↗</span></a><a href="/#platform" class="cf-button">See the workflow <span>↓</span></a></div></section>
+    <section class="cf-list">{features.map((feature, i) => <article class:list={["cf-row", { "cf-row-reverse": i % 2 === 1 }]}><div class="cf-visual"><span>{feature.n}</span><div class="cf-visual-card"><small>{feature.group}</small><b>{feature.title}</b><p>{feature.desc}</p><div class="cf-visual-line"></div><div class="cf-visual-line cf-line-short"></div><div class="cf-visual-tag">Built around your brand <span>✓</span></div></div></div><div class="cf-copy"><span class="cf-number">{feature.n} / {feature.group}</span><h2>{feature.title}</h2><p>{feature.desc}</p><ul>{feature.items.map(item => <li>{item}</li>)}</ul></div></article>)}</section>
+    <section class="cf-bottom"><span class="cf-eyebrow">START WITH YOUR WORKFLOW</span><h2>One place to make the next move.</h2><p>Begin with your brand, then build from the context Contentra learns along the way.</p><a href="/signup" class="cf-button cf-primary">Get started with Contentra <span>↗</span></a></section>
+  </main>
+  <style>
+    .cf-page{color:#18181b;--orange:#f47b20}.cf-hero{text-align:center;padding:88px 20px 78px;background:radial-gradient(ellipse at 50% 0,rgba(244,123,32,.1),transparent 58%),#fff}.cf-eyebrow{font-size:10px;font-weight:800;letter-spacing:.14em;color:#b75a13}.cf-hero h1{font-size:clamp(40px,5vw,62px);line-height:1.06;letter-spacing:-.055em;font-weight:800;margin:20px 0}.cf-hero h1 em{font-style:normal;color:var(--orange)}.cf-hero p,.cf-bottom p{max-width:610px;margin:0 auto;color:#73737b;font-size:14px;line-height:1.85}.cf-actions{display:flex;justify-content:center;gap:12px;margin-top:27px;flex-wrap:wrap}.cf-button{display:inline-flex;align-items:center;justify-content:center;gap:14px;padding:13px 18px;border:1px solid #e7e5e2;border-radius:9px;color:#28282d;text-decoration:none;font-size:12px;font-weight:750}.cf-primary{background:var(--orange);border-color:var(--orange);color:#fff}.cf-primary:hover{background:#df6814;color:#fff}.cf-list{width:min(1060px,calc(100% - 48px));margin:auto}.cf-row{display:grid;grid-template-columns:1fr 1fr;gap:90px;align-items:center;padding:72px 0;border-bottom:1px solid #ecebed}.cf-row-reverse .cf-visual{order:2}.cf-row-reverse .cf-copy{order:1}.cf-visual{min-height:285px;border-radius:15px;background:#faf6f1;position:relative;display:grid;place-items:center;overflow:hidden}.cf-visual:before,.cf-visual:after{content:"";position:absolute;border:1px solid #f0e2d6;border-radius:50%;width:260px;height:260px}.cf-visual:after{width:340px;height:340px}.cf-visual>span{position:absolute;left:20px;top:20px;font-size:10px;color:#b7a89e;font-weight:800}.cf-visual-card{position:relative;z-index:1;width:min(300px,82%);background:#fff;border:1px solid #eee7e1;border-radius:12px;padding:22px;box-shadow:0 20px 45px #3c2c1f0b}.cf-visual-card small{display:block;font-size:8px;letter-spacing:.12em;color:#bc641e;font-weight:800}.cf-visual-card>b{display:block;font-size:20px;letter-spacing:-.04em;margin:12px 0 7px}.cf-visual-card p{font-size:10px;line-height:1.7;color:#797980}.cf-visual-line{height:6px;border-radius:5px;background:#f1efed;margin-top:13px}.cf-line-short{width:65%;margin-top:7px}.cf-visual-tag{display:flex;justify-content:space-between;background:#fff0e5;color:#a9530e;padding:9px 10px;border-radius:6px;margin-top:18px;font-size:9px;font-weight:700}.cf-visual-tag span{color:#23794d}.cf-number{font-size:9px;letter-spacing:.1em;font-weight:800;color:#c46a26}.cf-copy h2{font-size:clamp(28px,3vw,39px);line-height:1.15;letter-spacing:-.05em;margin:15px 0}.cf-copy>p{font-size:13px;line-height:1.85;color:#73737b}.cf-copy ul{list-style:none;padding:0;margin:22px 0 0;display:grid;gap:11px}.cf-copy li{font-size:12px;color:#55555d;padding-left:23px;position:relative}.cf-copy li:before{content:"✓";position:absolute;left:0;color:var(--orange);font-weight:800}.cf-bottom{text-align:center;padding:75px 20px 90px;background:#faf9f7}.cf-bottom h2{font-size:clamp(30px,4vw,45px);letter-spacing:-.05em;line-height:1.1;margin:17px 0}.cf-bottom .cf-button{margin-top:25px}@media(max-width:760px){.cf-hero{padding:60px 18px}.cf-list{width:calc(100% - 32px)}.cf-row{grid-template-columns:1fr;gap:30px;padding:42px 0}.cf-row-reverse .cf-visual,.cf-row-reverse .cf-copy{order:initial}.cf-visual{min-height:250px}.cf-copy h2{font-size:32px}.cf-bottom{padding:60px 18px}}
+  </style>
 </Base>
