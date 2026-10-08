@@ -5,9 +5,9 @@
     "base_path": "/",
     "trailing_slash": false,
     "favicon": "/images/contentra-mark.svg",
-    "logo": "/images/logo.png",
-    "logo_width": "147",
-    "logo_height": "31",
+    "logo": "/images/contentra-logo.svg",
+    "logo_width": "156",
+    "logo_height": "34",
     "logo_text": "Contentra"
   },
   "settings": {
@@ -36,7 +36,7 @@
   },
   "metadata": {
     "meta_author": "Contentra",
-    "meta_image": "/images/og-image.png",
+    "meta_image": "/images/og-image.svg",
     "meta_description": "Connect your brand, discover opportunities, create better content, and build a smarter growth system with Contentra."
   }
 }
