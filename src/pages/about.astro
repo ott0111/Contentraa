@@ -1,38 +1,43 @@
 ---
-import PageHeader from "@/components/PageHeader.astro";
-import Shape from "@/components/Shape.astro";
-import CounterComponent from "@/components/about/CounterComponent.astro";
-import Gallery from "@/components/about/Gallery.astro";
-import OurMembers from "@/components/about/OurMembers.astro";
-import Works from "@/components/about/Works.astro";
 import Base from "@/layouts/Base.astro";
-import type { CollectionEntry } from "astro:content";
-import { getEntry } from "astro:content";
-
-const about = (await getEntry("about", "-index")) as CollectionEntry<"about">;
-const { counter, gallery, features, members } = about.data;
-const page_data = {
-  ...about.data,
-  content: about.body,
-};
 ---
 
 <Base
-  title={about.data.title}
-  meta_title={about.data.meta_title}
-  description={about.data.description}
-  image={about.data.image}
+  title="About Contentra"
+  meta_title="About Contentra | The Operating System for Creators"
+  description="Learn why Contentra is being built to help creators and businesses connect their brand strategy, content workflow, and growth insights."
 >
-  <Shape />
-  <section class="page-hero py-16">
+  <section class="page-hero pb-14 pt-16">
     <div class="container">
-      <div class="page-hero-content mx-auto max-w-[768px] text-center">
-        <PageHeader page_data={page_data} />
+      <div class="mx-auto max-w-[800px] text-center">
+        <p class="mb-4 text-sm font-semibold uppercase tracking-[0.16em] text-primary">About Contentra</p>
+        <h1 class="mb-6">A clearer system for growing through content.</h1>
+        <p class="text-lg">
+          Contentra is being built to bring brand context, content planning, creation, and performance insights into one workspace, so creators and teams can spend less time jumping between tools and more time making informed decisions.
+        </p>
       </div>
-      <CounterComponent counter={counter} />
-      <Gallery gallery={gallery} />
-      <Works features={features} />
-      <OurMembers members={members} />
+    </div>
+  </section>
+  <section class="section pt-0">
+    <div class="container">
+      <div class="mx-auto grid max-w-[1000px] gap-6 md:grid-cols-3">
+        <article class="rounded-2xl border border-border p-6">
+          <h2 class="mb-3 text-xl">Understand your brand</h2>
+          <p>Keep your audience, positioning, voice, and goals in one shared foundation for your content work.</p>
+        </article>
+        <article class="rounded-2xl border border-border p-6">
+          <h2 class="mb-3 text-xl">Turn ideas into action</h2>
+          <p>Bring research, planning, drafts, and campaigns into a more connected workflow.</p>
+        </article>
+        <article class="rounded-2xl border border-border p-6">
+          <h2 class="mb-3 text-xl">Learn and improve</h2>
+          <p>Use available evidence and performance data to decide what to test or improve next.</p>
+        </article>
+      </div>
+      <div class="mx-auto mt-12 max-w-[720px] text-center">
+        <p class="mb-6">Contentra is under active development. Features that require account connections, publishing permissions, billing, or live analytics will be described as available only when those systems are implemented and verified.</p>
+        <a class="btn btn-primary" href="/features">Explore the product</a>
+      </div>
     </div>
   </section>
 </Base>
