@@ -1,8 +1,8 @@
 {
-  "name": "pinwheel-astro",
-  "version": "4.0.2",
-  "description": "Astro and Tailwindcss Free Theme",
-  "author": "themefisher",
+  "name": "contentra-website",
+  "version": "1.0.0",
+  "description": "Contentra marketing website built with Astro and Tailwind CSS",
+  "author": "Contentra",
   "license": "MIT",
   "type": "module",
   "scripts": {
