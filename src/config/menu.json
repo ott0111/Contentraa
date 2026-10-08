@@ -1,17 +1,27 @@
 {
   "main": [
     {
-      "name": "Home",
-      "url": "/"
+      "name": "Features",
+      "url": "/features"
     },
     {
-      "name": "About",
-      "url": "/about"
+      "name": "How It Works",
+      "url": "/how-it-works"
+    },
+    {
+      "name": "Pricing",
+      "url": "/pricing"
     },
     {
       "name": "Blog",
       "url": "/blog"
     },
+    {
+      "name": "Contact",
+      "url": "/contact"
+    }
+  ],
+  "footer": [
     {
       "name": "Features",
       "url": "/features"
@@ -21,65 +31,24 @@
       "url": "/how-it-works"
     },
     {
-      "name": "Pages",
-      "url": "",
-      "hasChildren": true,
-      "children": [
-        {
-          "name": "Careers",
-          "url": "/careers"
-        },
-
-        {
-          "name": "Integrations",
-          "url": "/integrations"
-        },
-
-        {
-          "name": "Pricing",
-          "url": "/pricing"
-        },
-        {
-          "name": "Sign In",
-          "url": "/signin"
-        },
-
-        {
-          "name": "Elements",
-          "url": "/elements"
-        },
-        {
-          "name": "Changelog",
-          "url": "/changelog"
-        },
-        {
-          "name": "Terms And Conditions",
-          "url": "/terms-and-conditions"
-        }
-      ]
+      "name": "Pricing",
+      "url": "/pricing"
     },
     {
-      "name": "Contact",
-      "url": "/contact"
-    }
-  ],
-
-  "footer": [
-    {
-      "name": "About",
-      "url": "/about"
+      "name": "Blog",
+      "url": "/blog"
     },
     {
       "name": "Contact",
       "url": "/contact"
     },
     {
-      "name": "Elements",
-      "url": "/elements"
+      "name": "Sign in",
+      "url": "/signin"
     },
     {
-      "name": "Changelog",
-      "url": "/changelog"
+      "name": "Get started",
+      "url": "/signup"
     }
   ]
 }
