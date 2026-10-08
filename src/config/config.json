@@ -4,7 +4,7 @@
     "base_url": "https://contentra.app",
     "base_path": "/",
     "trailing_slash": false,
-    "favicon": "/images/favicon.png",
+    "favicon": "/images/contentra-mark.svg",
     "logo": "/images/logo.png",
     "logo_width": "147",
     "logo_height": "31",
