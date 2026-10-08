@@ -1,45 +1,19 @@
 ---
-import PageHeader from "@/components/PageHeader.astro";
-import Shape from "@/components/Shape.astro";
 import Base from "@/layouts/Base.astro";
-import Faq from "@/layouts/function-components/Faq.jsx";
-import PricingCard from "@/layouts/function-components/PricingCard.jsx";
-import type { CollectionEntry } from "astro:content";
-import { getEntry } from "astro:content";
-
-const pricing = (await getEntry(
-  "pricing",
-  "-index"
-)) as CollectionEntry<"pricing">;
-const page_data = {
-  ...pricing.data,
-  content: pricing.body,
-};
+const plans = [
+  { name: "Free", price: "$0", summary: "For exploring a smarter way to create.", featured: false, items: ["Basic Brand Brain setup", "Limited AI-assisted creation", "Introductory discovery", "Personal content library"] },
+  { name: "Pro", price: "$19.99", summary: "For creators building consistently.", featured: true, items: ["Expanded AI creation and variations", "Deeper Brand Brain personalization", "Expanded discovery and Creatos", "Planning and available analytics", "Next Best Action recommendations"] },
+  { name: "Business", price: "$49.99", summary: "For teams with more to manage.", featured: false, items: ["Higher creation limits", "Campaign workflows", "Advanced reporting where available", "Expanded workspace controls"] },
+  { name: "Agency", price: "$129.99*", summary: "For managing multiple clients.", featured: false, items: ["Separate client workspaces", "Client-specific Brand Brain", "Organized content and calendars", "Team permissions and reporting"] },
+];
 ---
-
-<Base
-  title={pricing.data.title}
-  meta_title={pricing.data.meta_title}
-  description={pricing.data.description}
-  image={pricing.data.image}
->
-  <Shape />
-  <section class="page-hero pb-14 pt-16">
-    <div class="container">
-      <PageHeader page_data={page_data} />
-    </div>
-  </section>
-  <!-- pricing -->
-  <section class="section mt-12 pt-0">
-    <div class="container">
-      <div class="row lg:px-10">
-        {
-          pricing.data.pricing_card.map((item) => (
-            <PricingCard item={item} client:load />
-          ))
-        }
-      </div>
-    </div>
-  </section>
-  <Faq client:load data={pricing.data} />
+<Base title="Contentra Pricing" meta_title="Contentra Pricing — Plans for Every Stage" description="Choose the Contentra plan that fits your creator or business workflow.">
+  <main class="cp-page">
+    <section class="cp-hero"><span>CONTENTRA PLANS</span><h1>More clarity. Better content.<br/><em>Room to grow.</em></h1><p>Start with the essentials, then unlock a deeper growth workflow as your needs change.</p></section>
+    <section class="cp-grid-wrap"><div class="cp-grid">{plans.map((plan) => <article class:list={["cp-card", { "cp-featured": plan.featured }]}>{plan.featured && <div class="cp-popular">MOST POPULAR</div>}<h2>{plan.name}</h2><p>{plan.summary}</p><div class="cp-price">{plan.price}<small> / month</small></div><a class:list={["cp-button", { "cp-button-primary": plan.featured }]} href="/signup">Get started <span>↗</span></a><div class="cp-divider"></div><b>Included in {plan.name}</b><ul>{plan.items.map((item) => <li>{item}</li>)}</ul></article>)}</div><p class="cp-note">*Agency pricing is tentative. Features depend on current product availability, plan entitlements, and supported integrations.</p></section>
+    <section class="cp-faq"><h2>Pricing questions</h2><details><summary>Can I start for free?<span>+</span></summary><p>Yes. The Free plan is designed to let you try the core workflow with reasonable usage limits.</p></details><details><summary>What changes when I upgrade?<span>+</span></summary><p>Paid plans are intended to unlock higher usage allowances and more advanced planning, intelligence, reporting, or client workflows based on the selected plan.</p></details><details><summary>Are all social integrations available on every plan?<span>+</span></summary><p>Platform capabilities depend on available APIs, account permissions, and the integrations enabled in Contentra. A connected account does not guarantee every publishing or analytics feature.</p></details><details><summary>Is the Agency price final?<span>+</span></summary><p>No. The $129.99 monthly Agency price is a working proposal and should be finalized against the multi-client features that are actually available.</p></details></section>
+  </main>
+  <style>
+    .cp-page{--orange:#f47b20;color:#18181b;padding-bottom:80px}.cp-hero{text-align:center;padding:85px 20px 52px;background:radial-gradient(ellipse at 50% 0,rgba(244,123,32,.1),transparent 55%),#fff}.cp-hero>span{font-size:10px;font-weight:800;letter-spacing:.14em;color:#bd5b0d}.cp-hero h1{font-size:clamp(38px,5vw,58px);font-weight:800;line-height:1.08;letter-spacing:-.055em;margin:20px 0 15px}.cp-hero h1 em{font-style:normal;color:var(--orange)}.cp-hero p{max-width:550px;margin:auto;color:#73737b;font-size:14px;line-height:1.8}.cp-grid-wrap{width:min(1160px,calc(100% - 48px));margin:0 auto}.cp-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px}.cp-card{position:relative;padding:24px 19px;border:1px solid #e8e6e3;border-radius:13px;background:#fff;display:flex;flex-direction:column;min-width:0}.cp-featured{border:1.5px solid var(--orange);box-shadow:0 12px 35px #f47b2010}.cp-popular{position:absolute;right:12px;top:12px;font-size:7px;font-weight:800;color:#bd5b0d;background:#fff0e5;padding:6px;border-radius:4px}.cp-card h2{font-size:18px;font-weight:800;margin:0}.cp-card>p{font-size:11px;line-height:1.7;color:#777780;min-height:38px;margin:9px 0 17px}.cp-price{font-size:30px;letter-spacing:-.05em;font-weight:800;white-space:nowrap}.cp-price small{font-size:9px;font-weight:400;letter-spacing:0;color:#898990}.cp-button{display:flex;justify-content:center;align-items:center;gap:10px;margin-top:18px;min-height:44px;border:1px solid #e5e3e1;border-radius:8px;text-decoration:none;color:#29292e;font-size:11px;font-weight:750}.cp-button-primary{background:var(--orange);border-color:var(--orange);color:#fff}.cp-button:hover{border-color:var(--orange)}.cp-button-primary:hover{background:#df6814;color:#fff}.cp-divider{height:1px;background:#eceae8;margin:22px 0 16px}.cp-card>b{font-size:10px;margin-bottom:13px}.cp-card ul{list-style:none;padding:0;margin:0;display:grid;gap:12px}.cp-card li{position:relative;padding-left:17px;font-size:10px;line-height:1.5;color:#686870}.cp-card li:before{content:"✓";position:absolute;left:0;color:#d56a19;font-weight:800}.cp-note{text-align:center;font-size:10px;color:#888890;margin-top:22px}.cp-faq{width:min(760px,calc(100% - 48px));margin:70px auto 0}.cp-faq h2{text-align:center;font-size:30px;letter-spacing:-.04em;margin-bottom:25px}.cp-faq details{border-bottom:1px solid #e9e8e6;padding:18px 0}.cp-faq details:first-of-type{border-top:1px solid #e9e8e6}.cp-faq summary{list-style:none;display:flex;justify-content:space-between;gap:15px;cursor:pointer;font-size:13px;font-weight:750}.cp-faq summary::-webkit-details-marker{display:none}.cp-faq summary span{color:var(--orange);font-size:20px;font-weight:400}.cp-faq details[open] summary span{transform:rotate(45deg)}.cp-faq details p{font-size:12px;line-height:1.8;color:#73737b;margin:12px 0 0}@media(max-width:950px){.cp-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}@media(max-width:560px){.cp-hero{padding:60px 18px 38px}.cp-hero h1{font-size:38px}.cp-grid-wrap{width:calc(100% - 32px)}.cp-grid{grid-template-columns:1fr}.cp-card>p{min-height:0}.cp-faq{width:calc(100% - 32px)}}
+  </style>
 </Base>
