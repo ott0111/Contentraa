@@ -1,24 +1,229 @@
 ---
 import Base from "@/layouts/Base.astro";
-import Banner from "@/layouts/components/Banner.astro";
-import KeyFeatures from "@/layouts/components/KeyFeatures.astro";
-import Service from "@/layouts/components/Service.astro";
-import Testimonial from "@/layouts/components/Testimonial.astro";
-import Cta from "@/layouts/partials/Cta.astro";
-import type { CollectionEntry } from "astro:content";
-import { getEntry } from "astro:content";
-
-const homepage = (await getEntry(
-  "homepage",
-  "-index"
-)) as CollectionEntry<"homepage">;
-const { banner, key_features, service, testimonial } = homepage.data;
 ---
 
-<Base>
-  <Banner banner={banner} />
-  <KeyFeatures key_features={key_features} />
-  <Service service={service} />
-  <Testimonial testimonial={testimonial} />
-  <Cta />
+<Base
+  title="Contentra — The Operating System for Creators"
+  meta_title="Contentra — Your next stage of growth starts here"
+  description="Connect your brand, discover opportunities, create better content, and build a smarter growth system with Contentra."
+>
+  <div class="cr-home">
+    <section class="cr-hero">
+      <div class="cr-container cr-hero-grid">
+        <div class="cr-hero-copy">
+          <div class="cr-eyebrow"><span class="cr-live-dot"></span> YOUR GROWTH, CONNECTED</div>
+          <h1>Your next stage of growth <span>starts here.</span></h1>
+          <p class="cr-hero-lede">Connect your brand, discover opportunities, create content, and build a smarter growth system with Contentra.</p>
+          <div class="cr-actions">
+            <a class="cr-button cr-button-primary" href="/signup">Get started <span aria-hidden="true">↗</span></a>
+            <a class="cr-button cr-button-quiet" href="#platform">Explore the platform <span aria-hidden="true">↓</span></a>
+          </div>
+          <div class="cr-trust-line"><span class="cr-check">✓</span> Built for creators, personal brands, businesses, and agencies</div>
+        </div>
+        <div class="cr-product-wrap" aria-label="Preview of the Contentra growth dashboard">
+          <div class="cr-product-window">
+            <div class="cr-window-bar"><div class="cr-window-dots"><i></i><i></i><i></i></div><span>app.contentra.com</span><span class="cr-window-avatar">Y</span></div>
+            <div class="cr-product-layout">
+              <aside class="cr-product-sidebar">
+                <div class="cr-mini-brand"><span class="cr-brand-mark">c</span><b>contentra</b></div>
+                <div class="cr-mini-nav cr-mini-active"><span>⌂</span> Home</div>
+                <div class="cr-mini-nav"><span>◈</span> Brand Brain</div>
+                <div class="cr-mini-nav"><span>⌕</span> Discover</div>
+                <div class="cr-mini-nav"><span>✳</span> Create</div>
+                <div class="cr-mini-nav"><span>▤</span> My Content</div>
+                <div class="cr-mini-nav"><span>▦</span> Planner</div>
+                <div class="cr-mini-nav"><span>↗</span> Analytics</div>
+                <div class="cr-mini-bottom">⚙ Settings</div>
+              </aside>
+              <div class="cr-product-main">
+                <div class="cr-product-heading"><div><small>MONDAY, OCTOBER 12</small><h3>Good morning, creator.</h3><p>Here’s what’s moving your growth forward.</p></div><span class="cr-create-mini">＋ Create</span></div>
+                <div class="cr-metric-grid">
+                  <div class="cr-metric"><small>Published this month</small><strong>12 <em>+3</em></strong><span>Content output</span></div>
+                  <div class="cr-metric"><small>Total reach</small><strong>24.8k</strong><span>Across connected accounts</span></div>
+                  <div class="cr-metric"><small>Engagement</small><strong>6.4%</strong><span>Selected time period</span></div>
+                </div>
+                <div class="cr-dashboard-lower">
+                  <div class="cr-chart-card"><div class="cr-card-title"><b>Content performance</b><span>Last 30 days⌄</span></div><div class="cr-chart-total">24,860 <small>views</small></div><svg viewBox="0 0 360 105" role="img" aria-label="Illustrative content performance chart"><defs><linearGradient id="cr-area" x1="0" x2="0" y1="0" y2="1"><stop offset="0%" stop-color="#f47b20" stop-opacity=".22"/><stop offset="100%" stop-color="#f47b20" stop-opacity="0"/></linearGradient></defs><path d="M0 83 C24 77 26 63 48 69 S78 88 99 58 S128 62 149 49 S178 65 201 35 S236 53 254 30 S286 42 306 19 S337 27 360 8 L360 105 L0 105Z" fill="url(#cr-area)"/><path d="M0 83 C24 77 26 63 48 69 S78 88 99 58 S128 62 149 49 S178 65 201 35 S236 53 254 30 S286 42 306 19 S337 27 360 8" fill="none" stroke="#f47b20" stroke-width="2.5" stroke-linecap="round"/></svg><div class="cr-chart-labels"><span>Sep 14</span><span>Sep 21</span><span>Sep 28</span><span>Oct 5</span><span>Oct 12</span></div></div>
+                  <div class="cr-next-card"><div class="cr-next-label"><span>✳</span> NEXT BEST ACTION</div><h4>Turn your best topic into a series</h4><p>Your audience has responded to educational content. Build on that interest with a follow-up post.</p><div class="cr-next-link">Create a follow-up <span>→</span></div></div>
+                </div>
+                <div class="cr-opportunity"><div class="cr-opportunity-icon">↗</div><div><b>Opportunity worth exploring</b><p>Answer a question your audience keeps asking</p></div><span class="cr-opportunity-arrow">→</span></div>
+              </div>
+            </div>
+          </div>
+          <div class="cr-float-note"><span class="cr-float-icon">✳</span><span><b>One connected workflow</b><small>From insight to published content</small></span></div>
+        </div>
+      </div>
+      <div class="cr-container cr-platform-strip"><span>ONE WORKSPACE FOR YOUR GROWTH</span><div><b>Creators</b><i></i><b>Personal brands</b><i></i><b>Businesses</b><i></i><b>Agencies</b></div></div>
+    </section>
+
+    <section class="cr-section cr-section-soft" id="platform">
+      <div class="cr-container">
+        <div class="cr-section-heading"><div class="cr-eyebrow">A BETTER WAY TO GROW</div><h2>Stop guessing what to post.<br/><span>Start building with purpose.</span></h2><p>Contentra connects the work behind great content, so every idea has a reason and every result can inform what comes next.</p></div>
+        <div class="cr-workflow">
+          <article><span class="cr-step">01</span><div class="cr-work-icon">◈</div><h3>Understand</h3><p>Give Contentra the context behind your brand, audience, voice, and goals.</p></article>
+          <article><span class="cr-step">02</span><div class="cr-work-icon">⌕</div><h3>Discover</h3><p>Find relevant topics and opportunities worth your time and attention.</p></article>
+          <article><span class="cr-step">03</span><div class="cr-work-icon">✳</div><h3>Create</h3><p>Turn useful ideas into original scripts, posts, briefs, and variations.</p></article>
+          <article><span class="cr-step">04</span><div class="cr-work-icon">▤</div><h3>Organize</h3><p>Keep drafts, assets, campaigns, and publishing plans in one place.</p></article>
+          <article><span class="cr-step">05</span><div class="cr-work-icon">↗</div><h3>Improve</h3><p>Learn from available performance data and choose a smarter next step.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="cr-section" id="features">
+      <div class="cr-container">
+        <div class="cr-feature-intro"><div><div class="cr-eyebrow">THE CONTENTRA WORKSPACE</div><h2>Everything connected.<br/><span>Nothing working in isolation.</span></h2></div><p>More than a generator. A practical system for deciding what matters, making the work, and learning from it.</p></div>
+        <div class="cr-feature-grid">
+          <article class="cr-feature-card cr-feature-large"><div class="cr-feature-copy"><span class="cr-feature-kicker">01 / INTELLIGENCE</span><h3>A brand brain that actually knows your brand.</h3><p>Build a reusable profile of your positioning, audience, offers, voice, and goals. Give every workflow the same approved context.</p><a href="/features">Explore Brand Brain <span>→</span></a></div><div class="cr-brand-preview"><div class="cr-brand-preview-top"><span class="cr-brand-avatar">C</span><div><b>Brand Brain</b><small>Workspace profile</small></div><span class="cr-status">Approved</span></div><div class="cr-profile-line"><small>POSITIONING</small><b>Useful insights for a growing audience</b></div><div class="cr-profile-pills"><span>Direct</span><span>Helpful</span><span>Confident</span></div><div class="cr-profile-line"><small>PRIMARY GOAL</small><b>Audience growth</b></div><div class="cr-profile-progress"><span></span></div><small class="cr-profile-foot">Brand context can be updated anytime</small></div></article>
+          <article class="cr-feature-card"><div class="cr-feature-visual cr-visual-orange"><span>✳</span><div class="cr-opportunity-mini"><small>CONTENT OPPORTUNITY</small><b>Make the complex feel simple.</b><p>3 original angles to explore</p><span>Open in Create →</span></div></div><span class="cr-feature-kicker">02 / DISCOVERY</span><h3>Find the angle worth creating.</h3><p>Explore trends, audience questions, and content gaps. Understand why an idea fits before investing time in it.</p></article>
+          <article class="cr-feature-card"><div class="cr-feature-visual cr-visual-dark"><div class="cr-script-paper"><small>SHORT-FORM SCRIPT</small><b>Hook</b><p>Most people get this part wrong...</p><hr/><b>Key points</b><p>Three ideas, one clear takeaway.</p><hr/><b>Call to action</b><p>Invite a useful conversation.</p></div></div><span class="cr-feature-kicker">03 / CREATION</span><h3>Make content that sounds like you.</h3><p>Create scripts, captions, briefs, and platform-specific variations with your brand context built in.</p></article>
+          <article class="cr-feature-card"><div class="cr-feature-visual cr-visual-calendar"><div class="cr-calendar-head"><b>October plan</b><span>•••</span></div><div class="cr-calendar-days"><span>M</span><span>T</span><span>W</span><span>T</span><span>F</span></div><div class="cr-calendar-events"><span>Educational post</span><span>Video script</span><span>Product story</span></div></div><span class="cr-feature-kicker">04 / ORGANIZATION</span><h3>Keep the whole process moving.</h3><p>Manage ideas, drafts, assets, campaigns, and planned posts in a searchable content library.</p></article>
+          <article class="cr-feature-card"><div class="cr-feature-visual cr-visual-insight"><div class="cr-insight-ring">↗</div><div><small>NEXT BEST ACTION</small><b>Test a new opening hook</b><p>Based on the context available</p></div></div><span class="cr-feature-kicker">05 / PERFORMANCE</span><h3>Know what to do next.</h3><p>Turn available results and workspace context into recommendations you can act on, not vague tips.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="cr-section cr-section-dark" id="who-its-for">
+      <div class="cr-container cr-audience-layout"><div class="cr-audience-intro"><div class="cr-eyebrow cr-eyebrow-light">MADE FOR YOUR KIND OF GROWTH</div><h2>One platform.<br/><span>Four ways to work.</span></h2><p>Contentra adapts to the workspace you're building, while keeping the core growth workflow connected.</p><a class="cr-button cr-button-light" href="/signup">Find your workflow <span>↗</span></a></div><div class="cr-audience-list"><article><span>01</span><div><h3>Creators</h3><p>Find ideas, write stronger scripts, and build a consistent publishing habit.</p></div><b>↗</b></article><article><span>02</span><div><h3>Personal brands</h3><p>Turn your expertise into clear, recognizable content that builds authority.</p></div><b>↗</b></article><article><span>03</span><div><h3>Businesses</h3><p>Align content with your offers, audience, and marketing goals.</p></div><b>↗</b></article><article><span>04</span><div><h3>Agencies</h3><p>Keep client context, creative work, calendars, and reporting organized.</p></div><b>↗</b></article></div></div>
+    </section>
+
+    <section class="cr-section cr-pricing-section" id="pricing">
+      <div class="cr-container">
+        <div class="cr-section-heading"><div class="cr-eyebrow">SIMPLE, TRANSPARENT PRICING</div><h2>Room to grow, at every stage.</h2><p>Start with the essentials. Upgrade when you need a deeper, more connected workflow.</p></div>
+        <div class="cr-pricing-grid">
+          <article class="cr-price-card"><span class="cr-plan-name">Free</span><p>For exploring a smarter way to create.</p><div class="cr-price">$0 <small>/ month</small></div><a class="cr-button cr-button-outline" href="/signup">Get started</a><div class="cr-price-divider"></div><b>Core growth workflow</b><ul><li>Basic Brand Brain setup</li><li>Limited AI-assisted creation</li><li>Introductory discovery</li><li>Personal content library</li></ul></article>
+          <article class="cr-price-card cr-price-featured"><span class="cr-popular">MOST POPULAR</span><span class="cr-plan-name">Pro</span><p>For creators building consistently.</p><div class="cr-price">$19.99 <small>/ month</small></div><a class="cr-button cr-button-primary" href="/signup">Choose Pro <span>↗</span></a><div class="cr-price-divider"></div><b>Personalized growth</b><ul><li>Expanded AI creation and variations</li><li>Deeper Brand Brain personalization</li><li>Expanded discovery and Creatos</li><li>Planning and available analytics</li><li>Next Best Action recommendations</li></ul></article>
+          <article class="cr-price-card"><span class="cr-plan-name">Business</span><p>For teams with more to manage.</p><div class="cr-price">$49.99 <small>/ month</small></div><a class="cr-button cr-button-outline" href="/signup">Choose Business</a><div class="cr-price-divider"></div><b>Advanced operations</b><ul><li>Higher creation limits</li><li>Campaign workflows</li><li>Advanced reporting where available</li><li>Expanded workspace controls</li></ul></article>
+          <article class="cr-price-card"><span class="cr-plan-name">Agency</span><p>For managing multiple clients.</p><div class="cr-price">$129.99 <small>/ month*</small></div><a class="cr-button cr-button-outline" href="/signup">Explore Agency</a><div class="cr-price-divider"></div><b>Multi-client workflow</b><ul><li>Separate client workspaces</li><li>Client-specific Brand Brain</li><li>Organized content and calendars</li><li>Team permissions and reporting</li></ul><small class="cr-plan-note">*Proposed pricing; final features may vary.</small></article>
+        </div>
+        <p class="cr-pricing-note">Feature availability depends on the current product release, connected platform permissions, and plan entitlements.</p>
+      </div>
+    </section>
+
+    <section class="cr-section cr-faq-section" id="faq">
+      <div class="cr-container cr-faq-layout"><div><div class="cr-eyebrow">GOOD QUESTIONS</div><h2>Before you get started.</h2><p>Clear answers about what Contentra is built to help you do.</p></div><div class="cr-faq-list"><details><summary>Is Contentra just an AI writing tool?<span>+</span></summary><p>No. Content creation is one part of the workflow. Contentra connects brand context, opportunity discovery, organization, available analytics, and next-step recommendations.</p></details><details><summary>Who is Contentra for?<span>+</span></summary><p>Creators, personal brands, businesses, and agencies can use the same core system, with workflows tailored to their needs.</p></details><details><summary>Do I need to connect social accounts?<span>+</span></summary><p>No. You can begin setting up your brand and creating content without connecting every account. Connected accounts are needed for the data and publishing actions those platforms make available.</p></details><details><summary>Can Contentra publish content automatically?<span>+</span></summary><p>Publishing depends on supported integrations, account permissions, and the capabilities available for each platform. Contentra should clearly show when a manual publishing step is required.</p></details><details><summary>Can I change my plan later?<span>+</span></summary><p>The intended subscription model supports upgrades and plan changes. Billing actions will depend on the payment and subscription features enabled in the product.</p></details></div></div>
+    </section>
+
+    <section class="cr-final-cta"><div class="cr-container cr-final-inner"><div class="cr-eyebrow cr-eyebrow-light">MAKE YOUR NEXT MOVE COUNT</div><h2>Build a growth system<br/>that works with you.</h2><p>Bring your brand, ideas, content, and next steps into one place.</p><a class="cr-button cr-button-light" href="/signup">Get started with Contentra <span>↗</span></a></div></section>
+  </div>
+
+  <style>
+    .cr-home{--orange:#f47b20;--ink:#18181b;--muted:#68686f;--line:#e9e9ec;--soft:#faf9f7;color:var(--ink);font-family:inherit;overflow:hidden}
+    .cr-container{width:min(1160px,calc(100% - 48px));margin-inline:auto}
+    .cr-hero{padding:72px 0 0;background:radial-gradient(ellipse at 80% 30%,rgba(244,123,32,.075),transparent 38%),#fff}
+    .cr-hero-grid{display:grid;grid-template-columns:.88fr 1.12fr;gap:44px;align-items:center}
+    .cr-eyebrow{display:flex;align-items:center;gap:9px;font-size:11px;font-weight:800;letter-spacing:.13em;color:#8a5a36;margin-bottom:22px}
+    .cr-live-dot{width:7px;height:7px;border-radius:50%;background:var(--orange);box-shadow:0 0 0 4px #fff0e5}
+    .cr-hero h1{font-size:clamp(42px,5.1vw,68px);line-height:1.03;letter-spacing:-.055em;font-weight:750;max-width:600px;margin:0}
+    .cr-hero h1 span,.cr-section-heading h2 span,.cr-feature-intro h2 span,.cr-audience-intro h2 span{color:var(--orange)}
+    .cr-hero-lede{font-size:17px;line-height:1.8;color:#68686f;max-width:490px;margin:24px 0 28px}
+    .cr-actions{display:flex;flex-wrap:wrap;gap:12px}
+    .cr-button{min-height:48px;padding:0 19px;border-radius:10px;display:inline-flex;align-items:center;justify-content:center;gap:15px;font-size:13px;font-weight:700;text-decoration:none;transition:transform .18s ease,background .18s ease,border-color .18s ease}
+    .cr-button:hover{transform:translateY(-2px)}
+    .cr-button-primary{background:var(--orange);color:#fff;border:1px solid var(--orange);box-shadow:0 8px 18px #f47b2024}
+    .cr-button-primary:hover{background:#df6814;color:#fff}
+    .cr-button-quiet{border:1px solid #e5e5e8;color:#29292e;background:#fff}
+    .cr-button-quiet:hover,.cr-button-outline:hover{border-color:var(--orange);color:#c85d0e}
+    .cr-trust-line{display:flex;align-items:center;gap:9px;color:#727279;font-size:11px;margin-top:27px}
+    .cr-check{width:17px;height:17px;display:grid;place-items:center;border-radius:50%;background:#fff0e5;color:#d86511;font-weight:800}
+    .cr-product-wrap{position:relative;min-width:0;padding:15px 0 38px 12px}
+    .cr-product-window{border:1px solid #e5e4e2;border-radius:15px;overflow:hidden;background:#fff;box-shadow:0 24px 80px #22222212;transform:perspective(1400px) rotateY(-2deg)}
+    .cr-window-bar{height:39px;border-bottom:1px solid #eeeef0;background:#fcfcfc;display:flex;align-items:center;justify-content:space-between;padding:0 13px;color:#a0a0a5;font-size:9px}
+    .cr-window-dots{display:flex;gap:4px}.cr-window-dots i{width:6px;height:6px;border-radius:50%;background:#dedee1}
+    .cr-window-avatar{width:22px;height:22px;border-radius:50%;display:grid;place-items:center;background:#fff0e5;color:#c45d0c;font-weight:800;font-size:10px}
+    .cr-product-layout{display:grid;grid-template-columns:130px minmax(0,1fr);min-height:390px}
+    .cr-product-sidebar{background:#fdfdfd;border-right:1px solid #eeeef0;padding:14px 9px;position:relative}
+    .cr-mini-brand{display:flex;align-items:center;gap:6px;font-size:11px;margin:0 0 23px 3px;letter-spacing:-.03em}
+    .cr-brand-mark{width:22px;height:22px;border-radius:7px;background:var(--orange);display:grid;place-items:center;color:#fff;font-weight:800;font-size:16px}
+    .cr-mini-nav{display:flex;align-items:center;gap:8px;padding:9px 8px;border-radius:6px;color:#85858c;font-size:9px;margin-bottom:3px}
+    .cr-mini-nav span{width:12px;text-align:center;font-size:12px}
+    .cr-mini-active{background:#fff0e5;color:#bd5b0d;font-weight:700}
+    .cr-mini-bottom{position:absolute;bottom:14px;left:17px;font-size:9px;color:#92929a}
+    .cr-product-main{padding:20px 17px 15px;min-width:0;background:#fff}
+    .cr-product-heading{display:flex;justify-content:space-between;gap:10px;align-items:flex-start;margin-bottom:18px}
+    .cr-product-heading small{font-size:7px;color:#9a9aa0;letter-spacing:.08em}
+    .cr-product-heading h3{font-size:16px;font-weight:750;letter-spacing:-.04em;margin:5px 0 4px;line-height:1.2}
+    .cr-product-heading p{font-size:8px;color:#8b8b92;margin:0}
+    .cr-create-mini{background:var(--orange);border-radius:6px;color:#fff;font-size:8px;font-weight:700;padding:7px 9px;white-space:nowrap}
+    .cr-metric-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px}
+    .cr-metric{border:1px solid #ededf0;border-radius:8px;padding:10px 9px;min-width:0}
+    .cr-metric small,.cr-metric span{display:block;font-size:7px;color:#898991;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+    .cr-metric strong{display:block;font-size:19px;letter-spacing:-.04em;margin:7px 0 4px;white-space:nowrap}
+    .cr-metric em{font-style:normal;font-size:8px;color:#278459;background:#eaf7ef;border-radius:4px;padding:3px}
+    .cr-dashboard-lower{display:grid;grid-template-columns:1.25fr 1fr;gap:8px;margin-top:10px}
+    .cr-chart-card,.cr-next-card{border:1px solid #ededf0;border-radius:8px;padding:10px;min-width:0}
+    .cr-card-title{display:flex;justify-content:space-between;gap:4px;font-size:8px}.cr-card-title span{color:#898991;font-size:7px}
+    .cr-chart-total{font-size:18px;font-weight:750;margin:8px 0 0}.cr-chart-total small{font-size:8px;color:#898991;font-weight:400}
+    .cr-chart-card svg{width:100%;height:auto;margin-top:1px}.cr-chart-labels{display:flex;justify-content:space-between;color:#a0a0a5;font-size:6px}
+    .cr-next-label{display:flex;align-items:center;gap:5px;font-size:7px;letter-spacing:.06em;color:#c96513;font-weight:800}
+    .cr-next-label span{font-size:11px}.cr-next-card h4{font-size:11px;line-height:1.4;margin:11px 0 6px;font-weight:750}
+    .cr-next-card p{font-size:8px;line-height:1.6;color:#7e7e85;margin:0}
+    .cr-next-link{display:flex;justify-content:space-between;align-items:center;margin-top:12px;border-top:1px solid #f0f0f2;padding-top:9px;font-size:8px;font-weight:750;color:#c96513}
+    .cr-opportunity{display:flex;align-items:center;gap:9px;margin-top:9px;padding:9px;border:1px solid #ededf0;border-radius:8px}
+    .cr-opportunity-icon{display:grid;place-items:center;flex:0 0 27px;height:27px;border-radius:7px;background:#f3f0ff;color:#7d61d1}
+    .cr-opportunity b{font-size:8px;display:block}.cr-opportunity p{font-size:7px;color:#8a8a91;margin:3px 0 0}.cr-opportunity-arrow{margin-left:auto;color:#aaa;font-size:13px}
+    .cr-float-note{position:absolute;right:-14px;bottom:3px;background:#fff;border:1px solid #ece9e6;box-shadow:0 12px 30px #22222210;border-radius:10px;padding:11px 14px;display:flex;gap:10px;align-items:center}
+    .cr-float-icon{display:grid;place-items:center;width:29px;height:29px;background:#fff0e5;color:#cb6514;border-radius:8px}
+    .cr-float-note b,.cr-float-note small{display:block}.cr-float-note b{font-size:10px}.cr-float-note small{font-size:8px;color:#8b8b91;margin-top:3px}
+    .cr-platform-strip{border-top:1px solid #eeeef0;margin-top:52px;padding:20px 0 23px;display:flex;align-items:center;justify-content:space-between;gap:20px}
+    .cr-platform-strip>span{font-size:9px;font-weight:800;letter-spacing:.1em;color:#9999a0}
+    .cr-platform-strip>div{display:flex;align-items:center;gap:18px;color:#777780;font-size:11px}.cr-platform-strip i{height:4px;width:4px;border-radius:50%;background:#f0a46d}
+    .cr-section{padding:100px 0}.cr-section-soft{background:#faf9f7}
+    .cr-section-heading{text-align:center;max-width:700px;margin:0 auto 48px}
+    .cr-section-heading .cr-eyebrow{justify-content:center}
+    .cr-section-heading h2,.cr-feature-intro h2,.cr-audience-intro h2,.cr-faq-layout h2{font-size:clamp(32px,4vw,47px);line-height:1.12;letter-spacing:-.05em;font-weight:750;margin:0}
+    .cr-section-heading>p,.cr-feature-intro>p,.cr-audience-intro>p,.cr-faq-layout>div:first-child>p{font-size:14px;line-height:1.8;color:#73737b;margin:17px auto 0;max-width:570px}
+    .cr-workflow{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:15px}
+    .cr-workflow article{position:relative;padding:22px 17px 20px;border:1px solid #e9e7e4;border-radius:13px;background:#fff;min-height:210px}
+    .cr-step{font-size:10px;letter-spacing:.08em;color:#b0afb3;font-weight:800}
+    .cr-work-icon{width:38px;height:38px;display:grid;place-items:center;border-radius:10px;background:#fff0e5;color:#d86c18;font-size:19px;margin:20px 0 18px}
+    .cr-workflow h3{font-size:15px;letter-spacing:-.025em;font-weight:750;margin:0 0 8px}.cr-workflow p{font-size:11px;line-height:1.7;color:#777780;margin:0}
+    .cr-feature-intro{display:flex;align-items:end;justify-content:space-between;gap:35px;margin-bottom:35px}.cr-feature-intro .cr-eyebrow{margin-bottom:16px}.cr-feature-intro>p{max-width:380px;margin:0 0 4px}
+    .cr-feature-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:17px}
+    .cr-feature-card{border:1px solid #e9e8e6;border-radius:15px;padding:24px;background:#fff;min-width:0}
+    .cr-feature-large{grid-column:span 2;display:grid;grid-template-columns:1fr .88fr;gap:35px;align-items:center;background:#fdfbf8;padding:35px}
+    .cr-feature-kicker{display:block;color:#a1a0a6;font-size:9px;font-weight:800;letter-spacing:.1em;margin:18px 0 10px}
+    .cr-feature-copy .cr-feature-kicker{margin-top:0}
+    .cr-feature-card h3{font-size:22px;line-height:1.2;letter-spacing:-.04em;margin:0 0 10px;font-weight:750}
+    .cr-feature-card p{font-size:12px;line-height:1.8;color:#75757c;margin:0}
+    .cr-feature-copy h3{font-size:clamp(26px,3vw,35px);max-width:400px}.cr-feature-copy p{max-width:440px}
+    .cr-feature-copy a{display:inline-flex;gap:15px;margin-top:20px;color:#c96312;font-size:12px;font-weight:800;text-decoration:none}
+    .cr-brand-preview{background:#fff;border:1px solid #ece8e3;border-radius:12px;padding:18px;box-shadow:0 12px 35px #22222208}
+    .cr-brand-preview-top{display:flex;align-items:center;gap:9px;padding-bottom:16px;border-bottom:1px solid #efedeb}
+    .cr-brand-avatar{display:grid;place-items:center;width:33px;height:33px;background:var(--orange);color:white;border-radius:9px;font-weight:800}
+    .cr-brand-preview-top b,.cr-brand-preview-top small{display:block}.cr-brand-preview-top b{font-size:12px}.cr-brand-preview-top small{font-size:9px;color:#929198;margin-top:3px}
+    .cr-status{margin-left:auto;color:#287e54;background:#eaf7ef;border-radius:5px;padding:5px 7px;font-size:8px;font-weight:700}
+    .cr-profile-line{margin-top:16px}.cr-profile-line small{display:block;color:#9b9aa1;font-size:8px;letter-spacing:.08em;margin-bottom:6px}.cr-profile-line b{font-size:11px}
+    .cr-profile-pills{display:flex;gap:7px;margin-top:10px}.cr-profile-pills span{padding:5px 8px;border:1px solid #ecebed;border-radius:5px;font-size:9px;color:#777780}
+    .cr-profile-progress{height:5px;border-radius:99px;background:#f1efed;margin-top:10px;overflow:hidden}.cr-profile-progress span{display:block;width:72%;height:100%;background:var(--orange);border-radius:99px}
+    .cr-profile-foot{display:block;color:#a1a0a5;font-size:8px;margin-top:8px}
+    .cr-feature-visual{height:190px;border-radius:10px;display:flex;align-items:center;justify-content:center;overflow:hidden;margin-bottom:19px;padding:20px}
+    .cr-visual-orange{background:#fff3e8;gap:16px}.cr-visual-orange>span{font-size:45px;color:#e87820}
+    .cr-opportunity-mini{background:#fff;border:1px solid #f3e0d0;border-radius:10px;padding:15px;width:220px;box-shadow:0 9px 25px #8b4e2010}
+    .cr-opportunity-mini small,.cr-opportunity-mini b,.cr-opportunity-mini p{display:block}.cr-opportunity-mini small{font-size:7px;color:#b56b32;letter-spacing:.1em}.cr-opportunity-mini b{font-size:13px;line-height:1.4;margin-top:8px}.cr-opportunity-mini p{font-size:9px;margin:6px 0 11px}.cr-opportunity-mini>span{font-size:8px;font-weight:800;color:#c96513}
+    .cr-visual-dark{background:#252326}.cr-script-paper{background:#fff;border-radius:6px;padding:13px 17px;width:210px;box-shadow:0 12px 25px #0002}.cr-script-paper small,.cr-script-paper b{display:block}.cr-script-paper small{font-size:7px;color:#b2aeb0;letter-spacing:.1em}.cr-script-paper b{font-size:10px;margin-top:10px}.cr-script-paper p{font-size:8px;margin:3px 0;color:#777}.cr-script-paper hr{border:0;border-top:1px solid #eee;margin:8px 0}
+    .cr-visual-calendar{display:block;background:#f7f5f2;padding:18px 22px}.cr-calendar-head{display:flex;justify-content:space-between;font-size:11px}.cr-calendar-head span{color:#999}.cr-calendar-days{display:grid;grid-template-columns:repeat(5,1fr);margin-top:17px;text-align:center;color:#999;font-size:9px}.cr-calendar-events{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:7px;margin-top:10px}.cr-calendar-events span{background:#fff0e5;border-left:3px solid var(--orange);padding:11px 6px;border-radius:4px;font-size:8px;color:#8a4c1e;line-height:1.4}
+    .cr-visual-insight{background:#f4f2fc;gap:17px;justify-content:flex-start}.cr-insight-ring{width:53px;height:53px;flex:0 0 53px;border:1px solid #d7cef7;border-radius:50%;display:grid;place-items:center;color:#7b60cf;font-size:24px;background:#fff}.cr-visual-insight small,.cr-visual-insight b,.cr-visual-insight p{display:block}.cr-visual-insight small{font-size:7px;color:#8270c0;letter-spacing:.08em}.cr-visual-insight b{font-size:12px;margin:8px 0 5px}.cr-visual-insight p{font-size:9px}
+    .cr-section-dark{background:#201f20;color:#fff}.cr-audience-layout{display:grid;grid-template-columns:.8fr 1.2fr;gap:90px;align-items:center}
+    .cr-eyebrow-light{color:#e8a36f}.cr-audience-intro h2{font-size:clamp(36px,4vw,50px)}.cr-audience-intro>p{color:#b7b5b6;margin:19px 0 25px;max-width:370px}
+    .cr-button-light{background:#fff;color:#222;border:1px solid #fff}.cr-button-light:hover{background:#fff0e5;border-color:#fff0e5;color:#a64c09}
+    .cr-audience-list article{display:grid;grid-template-columns:32px 1fr 20px;gap:17px;align-items:start;padding:23px 0;border-bottom:1px solid #414042}
+    .cr-audience-list article:first-child{border-top:1px solid #414042}.cr-audience-list article>span{font-size:10px;color:#f2a56f;padding-top:5px}.cr-audience-list h3{font-size:17px;font-weight:700;margin:0 0 6px}.cr-audience-list p{font-size:11px;line-height:1.7;color:#b6b4b6;margin:0}.cr-audience-list article>b{color:#e78b43;font-size:15px}
+    .cr-pricing-section{background:#faf9f7}.cr-pricing-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:13px;align-items:stretch}
+    .cr-price-card{position:relative;border:1px solid #e8e6e3;border-radius:13px;padding:23px 19px;background:#fff;display:flex;flex-direction:column;min-width:0}
+    .cr-price-featured{border:1.5px solid var(--orange);box-shadow:0 12px 30px #e66f1a0c}
+    .cr-popular{position:absolute;right:13px;top:13px;font-size:7px;letter-spacing:.06em;font-weight:800;color:#c25b0c;background:#fff0e5;padding:6px 7px;border-radius:4px}
+    .cr-plan-name{font-size:17px;font-weight:800;letter-spacing:-.03em}.cr-price-card>p{font-size:10px;line-height:1.6;color:#777780;min-height:34px;margin:9px 0 17px}
+    .cr-price{font-size:29px;font-weight:800;letter-spacing:-.06em;white-space:nowrap}.cr-price small{font-size:9px;color:#898990;font-weight:400;letter-spacing:0}
+    .cr-price-card .cr-button{margin-top:18px;width:100%;font-size:11px;padding-inline:10px}
+    .cr-button-outline{border:1px solid #e5e3e1;color:#27272b;background:#fff}.cr-price-divider{height:1px;background:#eceae8;margin:22px 0 17px}.cr-price-card> b{font-size:10px;margin-bottom:12px}
+    .cr-price-card ul{list-style:none;margin:0;padding:0;display:grid;gap:11px}.cr-price-card li{position:relative;padding-left:17px;font-size:10px;line-height:1.5;color:#686870}.cr-price-card li:before{content:"✓";position:absolute;left:0;color:#d56a19;font-weight:800}
+    .cr-plan-note{font-size:8px;color:#9a999f;margin-top:13px}.cr-pricing-note{text-align:center;font-size:10px;color:#85848a;margin:22px 0 0}
+    .cr-faq-layout{display:grid;grid-template-columns:.7fr 1.3fr;gap:90px}.cr-faq-layout .cr-eyebrow{margin-bottom:15px}.cr-faq-layout>div:first-child>p{margin-left:0}
+    .cr-faq-list details{border-bottom:1px solid #e9e8e6;padding:18px 0}.cr-faq-list details:first-child{border-top:1px solid #e9e8e6}.cr-faq-list summary{display:flex;align-items:center;justify-content:space-between;gap:18px;cursor:pointer;list-style:none;font-size:13px;font-weight:750}.cr-faq-list summary::-webkit-details-marker{display:none}.cr-faq-list summary span{color:var(--orange);font-size:20px;font-weight:400;transition:transform .2s}.cr-faq-list details[open] summary span{transform:rotate(45deg)}.cr-faq-list details p{font-size:12px;line-height:1.8;color:#74747b;max-width:650px;margin:12px 0 0}
+    .cr-final-cta{background:#242223;color:#fff;padding:77px 0;text-align:center;position:relative;overflow:hidden}.cr-final-cta:before{content:"";position:absolute;width:440px;height:440px;border-radius:50%;border:1px solid #ffffff12;left:50%;top:50%;transform:translate(-50%,-50%);box-shadow:0 0 0 50px #ffffff04,0 0 0 100px #ffffff03}
+    .cr-final-inner{position:relative;z-index:1}.cr-final-inner .cr-eyebrow{justify-content:center}.cr-final-inner h2{font-size:clamp(35px,4vw,52px);line-height:1.1;letter-spacing:-.05em;margin:0;font-weight:750}.cr-final-inner>p{font-size:13px;color:#c3c0c1;margin:16px 0 25px}.cr-final-inner .cr-button{margin:auto}
+    @media(max-width:1000px){.cr-hero-grid{grid-template-columns:1fr;gap:28px}.cr-hero-copy{max-width:680px}.cr-product-wrap{max-width:720px;width:100%;margin:auto}.cr-platform-strip{margin-top:24px}.cr-workflow{grid-template-columns:repeat(3,minmax(0,1fr))}.cr-pricing-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.cr-audience-layout{gap:45px}.cr-faq-layout{gap:45px}}
+    @media(max-width:640px){.cr-container{width:min(100% - 32px,1160px)}.cr-hero{padding-top:48px}.cr-hero h1{font-size:43px}.cr-hero-lede{font-size:15px}.cr-actions{align-items:stretch}.cr-button{min-height:46px}.cr-trust-line{align-items:flex-start;line-height:1.6}.cr-product-wrap{padding:0 0 25px}.cr-product-window{transform:none}.cr-product-layout{grid-template-columns:76px minmax(0,1fr);min-height:0}.cr-product-sidebar{padding:11px 5px}.cr-mini-brand{margin:0 0 16px 1px;gap:4px;font-size:0}.cr-brand-mark{width:21px;height:21px}.cr-mini-nav{gap:3px;padding:8px 4px;font-size:7px}.cr-mini-nav span{font-size:10px;width:10px}.cr-mini-bottom{left:7px;font-size:7px}.cr-product-main{padding:13px 9px}.cr-product-heading h3{font-size:12px}.cr-product-heading p{font-size:7px}.cr-create-mini{padding:6px;font-size:7px}.cr-metric-grid{gap:4px}.cr-metric{padding:7px 5px}.cr-metric small,.cr-metric span{font-size:6px}.cr-metric strong{font-size:14px}.cr-dashboard-lower{grid-template-columns:1fr;gap:6px}.cr-chart-card{padding:8px}.cr-next-card{padding:9px}.cr-next-card h4{margin-top:7px}.cr-opportunity{padding:7px}.cr-float-note{right:0;bottom:0;padding:8px 10px}.cr-platform-strip{display:block;margin-top:25px}.cr-platform-strip>div{flex-wrap:wrap;gap:10px;margin-top:12px}.cr-platform-strip>span{font-size:8px}.cr-section{padding:68px 0}.cr-section-heading{margin-bottom:32px}.cr-section-heading h2,.cr-feature-intro h2,.cr-audience-intro h2,.cr-faq-layout h2{font-size:34px}.cr-section-heading>p,.cr-feature-intro>p{font-size:12px}.cr-workflow{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}.cr-workflow article{min-height:190px;padding:17px 13px}.cr-work-icon{margin:15px 0}.cr-workflow p{font-size:10px}.cr-feature-intro{display:block}.cr-feature-intro>p{margin-top:15px}.cr-feature-grid{grid-template-columns:1fr;gap:12px}.cr-feature-large{grid-column:auto;grid-template-columns:1fr;gap:25px;padding:22px}.cr-feature-card{padding:19px}.cr-feature-card h3{font-size:20px}.cr-feature-visual{height:165px}.cr-audience-layout,.cr-faq-layout{grid-template-columns:1fr;gap:36px}.cr-audience-list article{gap:10px;padding:18px 0}.cr-pricing-grid{grid-template-columns:1fr;gap:12px}.cr-price-card{padding:22px}.cr-price-card>p{min-height:0}.cr-price-card li{font-size:11px}.cr-faq-layout>div:first-child>p{font-size:12px}.cr-faq-list summary{font-size:12px}.cr-final-cta{padding:62px 0}.cr-final-inner h2{font-size:38px}}
+    @media(prefers-reduced-motion:reduce){.cr-home *{scroll-behavior:auto!important;transition:none!important}}
+  </style>
 </Base>
