@@ -13,10 +13,6 @@
       "url": "/pricing"
     },
     {
-      "name": "Blog",
-      "url": "/blog"
-    },
-    {
       "name": "Contact",
       "url": "/contact"
     }
@@ -35,10 +31,6 @@
       "url": "/pricing"
     },
     {
-      "name": "Blog",
-      "url": "/blog"
-    },
-    {
       "name": "Contact",
       "url": "/contact"
     },
@@ -47,7 +39,7 @@
       "url": "/signin"
     },
     {
-      "name": "Get started",
+      "name": "Get early access",
       "url": "/signup"
     }
   ]
