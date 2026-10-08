@@ -1,65 +1,25 @@
----
-import Logo from "@/components/Logo.astro";
-import Social from "@/components/Social.astro";
-import config from "@/config/config.json";
-import menu from "@/config/menu.json";
-import social from "@/config/social.json";
-import { markdownify } from "@/lib/utils/textConverter";
-const { footer } = menu;
-const { copyright, location, email, phone, footer_description } = config.params;
----
-
-<footer class="footer bg-light">
-  <div class="container">
-    <div class="gx-5 row pb-10 pt-[52px]">
-      <div class="col-12 mt-12 md:col-6 lg:col-3">
-        <Logo />
-        <p class="mt-6">
-          {footer_description}
-        </p>
-      </div>
-      <div class="col-12 mt-12 md:col-6 lg:col-3">
-        <h6>Socials</h6>
-
-        <Social source={social.main} className="social-icons mt-4 lg:mt-6" />
-      </div>
-      <div class="col-12 mt-12 md:col-6 lg:col-3">
-        <h6>Quick Links</h6>
-        <ul>
-          {
-            footer.map((item, i) => (
-              <li class={footer.length - 1 === i ? "mb-0" : "mb-4"}>
-                <a class="hover:text-primary hover:underline " href={item.url}>
-                  {item.name}
-                </a>
-              </li>
-            ))
-          }
-        </ul>
-      </div>
-      <div class="col-12 mt-12 md:col-6 lg:col-3">
-        <h6>Location & Contact</h6>
-        <ul>
-          <li class="mb-2">{location}</li>
-          <li class="mb-2">
-            <a class="mb-2 hover:text-primary" href={`mailto:${email}`}
-              >{email}</a
-            >
-          </li>
-          <li>
-            <a class="hover:text-primary hover:underline" href={`tel:${phone}`}
-              >{phone}</a
-            >
-          </li>
-        </ul>
-      </div>
+<footer class="cr-footer">
+  <div class="cr-footer-main">
+    <div class="cr-footer-brand">
+      <a class="cr-footer-wordmark" href="/"><span>c</span> contentra</a>
+      <p>The operating system for creators. Connect your brand, discover opportunities, and build a smarter growth system.</p>
     </div>
+    <div class="cr-footer-column"><b>Platform</b><a href="/#platform">How it works</a><a href="/#features">Features</a><a href="/#who-its-for">Who it's for</a><a href="/#pricing">Pricing</a></div>
+    <div class="cr-footer-column"><b>Explore</b><a href="/features">Product features</a><a href="/how-it-works">How it works</a><a href="/blog">Resources</a><a href="/contact">Contact</a></div>
+    <div class="cr-footer-column"><b>Account</b><a href="/signin">Sign in</a><a href="/signup">Get started</a><a href="/terms-and-conditions">Terms</a><a href="/privacy-policy">Privacy</a></div>
   </div>
-  <div class="container max-w-[1440px]">
-    <div
-      class="footer-copyright mx-auto border-t border-border pb-10 pt-7 text-center"
-    >
-      <p class="content text-text" set:html={markdownify(copyright)} />
-    </div>
-  </div>
+  <div class="cr-footer-bottom"><span>© {new Date().getFullYear()} Contentra. All rights reserved.</span><span>Made for the work behind the growth.</span></div>
 </footer>
+<style is:global>
+  .cr-footer{background:#fff;border-top:1px solid #ecebed;color:#25252a}
+  .cr-footer-main{width:min(1160px,calc(100% - 48px));margin:auto;padding:55px 0 45px;display:grid;grid-template-columns:1.7fr repeat(3,1fr);gap:55px}
+  .cr-footer-wordmark{display:inline-flex;align-items:center;gap:8px;text-decoration:none;color:#18181b;font-size:20px;font-weight:800;letter-spacing:-.06em}
+  .cr-footer-wordmark span{display:grid;place-items:center;width:28px;height:28px;border-radius:8px;background:#f47b20;color:white;font-size:21px}
+  .cr-footer-brand p{max-width:270px;font-size:12px;line-height:1.8;color:#797981;margin:16px 0 0}
+  .cr-footer-column{display:flex;flex-direction:column;align-items:flex-start;gap:13px}
+  .cr-footer-column b{font-size:11px;margin-bottom:4px}
+  .cr-footer-column a{font-size:11px;color:#73737b;text-decoration:none}
+  .cr-footer-column a:hover{color:#d76816}
+  .cr-footer-bottom{width:min(1160px,calc(100% - 48px));margin:auto;border-top:1px solid #ecebed;padding:18px 0 23px;display:flex;justify-content:space-between;gap:20px;color:#9999a0;font-size:10px}
+  @media(max-width:700px){.cr-footer-main{width:calc(100% - 32px);grid-template-columns:repeat(2,minmax(0,1fr));gap:32px 22px;padding:40px 0}.cr-footer-brand{grid-column:span 2}.cr-footer-bottom{width:calc(100% - 32px);flex-direction:column;gap:8px}}
+</style>
